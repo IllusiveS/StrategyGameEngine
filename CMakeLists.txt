@@ -3,11 +3,7 @@ project(StrategyGame)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin/Game")
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/GameData)
-
-include( GameData/CMakeLists.txt)
-
-set(SOURCE_FILES main.cpp)
-add_executable(StrategyGame.exe ${SOURCE_FILES})
+add_subdirectory(GameData/)
+add_subdirectory(GameCore/)

@@ -3,4 +3,6 @@ project(StrategyGame)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(GameDataLib GameData/Unit/Unit.cpp)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
+
+add_library(GameDataLib Unit/Unit.cpp)
