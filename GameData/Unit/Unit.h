@@ -7,13 +7,31 @@
 
 #include <string>
 #include "lua.hpp"
+#include "json/json.hpp"
+
+using json = nlohmann::json;
 
 class Unit {
 protected:
 	int hp;
 	int glory;
 	std::string name;
+public:
+	int getHp() const;
+	void setHp(int hp);
+	int getGlory() const;
+	void setGlory(int glory);
+	const std::string &getName() const;
+	void setName(const std::string &name);
+
+protected:
 	static void ExportToLua(lua_State * L);
+	static Unit * CreateUnitFromJson(json j);
+	Unit(json j);
+
+public:
+	Unit();
+	json SerializeToJson();
 };
 
 
