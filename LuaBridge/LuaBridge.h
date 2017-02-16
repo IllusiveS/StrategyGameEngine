@@ -104,6 +104,7 @@ private:
 #include "detail/CFunctions.h"
 #include "detail/Namespace.h"
 
+
 //------------------------------------------------------------------------------
 /**
     Push an object onto the Lua stack.
