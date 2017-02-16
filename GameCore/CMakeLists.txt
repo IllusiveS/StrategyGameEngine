@@ -8,3 +8,5 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/GameData)
 
 set(SOURCE_FILES main.cpp)
 add_executable(StrategyGame.exe ${SOURCE_FILES})
+add_dependencies(StrategyGame.exe GameData)
+target_link_libraries(StrategyGame.exe "${CMAKE_CURRENT_SOURCE_DIR}/../GameData/libGameData.a")

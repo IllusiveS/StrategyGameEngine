@@ -7,4 +7,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin/Game")
 
 add_subdirectory(GameData/)
 add_subdirectory(GameCore/)
-add_subdirectory(Editor)
+add_subdirectory(Editor/)

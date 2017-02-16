@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_library(GameDataLib Unit/Unit.cpp)
+add_library(GameData Unit/Unit.cpp)
