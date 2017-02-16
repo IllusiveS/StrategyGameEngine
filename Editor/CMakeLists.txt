@@ -16,4 +16,4 @@ set(SOURCE_FILES main.cpp mainwindow.cpp)
 
 add_executable(StrategyGameEditor.exe ${SOURCE_FILES})
 add_dependencies(StrategyGameEditor.exe GameData)
-target_link_libraries(StrategyGameEditor.exe ${CMAKE_CURRENT_SOURCE_DIR}/../GameData/libGameData.a Qt5::Widgets)
+target_link_libraries(StrategyGameEditor.exe ${CMAKE_CURRENT_SOURCE_DIR}/../GameData/libGameData.a Qt5::Widgets  ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES} ${LUA_LIBRARIES} ${SDLMIXER2_LIBRARIES})
