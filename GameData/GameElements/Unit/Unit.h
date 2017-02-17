@@ -27,9 +27,10 @@ public:
 	const std::string &getName() const;
 	void setName(const std::string &name);
 
-protected:
 	static void ExportToLua(lua_State * L);
-	static Unit * CreateUnitFromJson(json j);
+
+protected:
+	static Unit * CreateUnitFromJson(json j);//TODO odczytywanie z pliku
 	Unit(json j);
 
 public:

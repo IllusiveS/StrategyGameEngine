@@ -7,7 +7,8 @@
 
 
 class MapManager {
-
+	//TODO odczyt jsonów mapy z plików z katalogu
+	//TODO dostęp do obiektów mapy ze stringa
 };
 
 

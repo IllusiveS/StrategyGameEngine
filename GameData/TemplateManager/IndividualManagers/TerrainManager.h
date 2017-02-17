@@ -7,7 +7,8 @@
 
 
 class TerrainManager {
-
+	//TODO odczyt jsonów terenów z plików z katalogu
+	//TODO dostęp do obiektów terenów ze stringa
 };
 
 

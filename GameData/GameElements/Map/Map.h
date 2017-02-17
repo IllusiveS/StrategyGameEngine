@@ -7,7 +7,10 @@
 
 
 class Map {
-
+	//TODO array of arrays of maptiles
+	//TODO serializacja do JSONa
+	//TODO odczyt z JSONa
+	//TODO export do luły
 };
 
 

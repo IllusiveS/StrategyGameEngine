@@ -7,7 +7,9 @@
 
 
 class TemplateManager {
-
+	//TODO odczyt danych z każdego katalogu z danymi (bendom mody)
+	//TODO przechowywanie wszystkich managerów
+	//TODO dostęp do informacji o modach?
 };
 
 

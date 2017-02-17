@@ -7,6 +7,7 @@
 
 void Unit::ExportToLua(lua_State *L) {
 	using namespace luabridge;
+	//TODO dokończyć export do luły
 	getGlobalNamespace(L)
 			.beginClass<Unit>("Unit")
 					.addData("name", &Unit::name)

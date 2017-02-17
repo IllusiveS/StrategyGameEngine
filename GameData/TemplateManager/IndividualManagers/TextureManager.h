@@ -7,7 +7,8 @@
 
 
 class TextureManager {
-
+	//TODO odczyt tekstur z katalogu z teksturami
+	//TODO dostęp do tekstur na podstawie stringa
 };
 
 

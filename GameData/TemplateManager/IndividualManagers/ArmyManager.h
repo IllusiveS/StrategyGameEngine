@@ -7,7 +7,8 @@
 
 
 class ArmyManager {
-
+	//TODO odczyt jsonów armii z plików z katalogu
+	//TODO dostęp do obiektów armii ze stringa
 };
 
 
