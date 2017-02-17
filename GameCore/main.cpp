@@ -1,5 +1,5 @@
 #include <iostream>
-#include "GameData/Unit/Unit.h"
+#include "GameElements/Unit/Unit.h"
 #include <fstream>
 
 int main() {
@@ -8,6 +8,7 @@ int main() {
 	u.setGlory(1);
 	u.setHp(5);
 	u.setName("unit");
+	u.setTemplateName("BASIC_UNIT");
 	json j = u.SerializeToJson();
 	std::ofstream o("pretty.json");
 	o << std::setw(4) << j << std::endl;

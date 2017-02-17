@@ -17,6 +17,7 @@ void Unit::ExportToLua(lua_State *L) {
 json Unit::SerializeToJson() {
 	json j;
 	j["templateType"] = "UNIT";
+	j["templateName"] = templateName;
 	j["name"] = name;
 	j["strength"] = hp;
 	j["glory"] = glory;
@@ -62,4 +63,12 @@ void Unit::setName(const std::string &name) {
 
 Unit::Unit() {
 
+}
+
+const std::string &Unit::getTemplateName() const {
+	return templateName;
+}
+
+void Unit::setTemplateName(const std::string &templateName) {
+	Unit::templateName = templateName;
 }

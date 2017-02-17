@@ -16,7 +16,10 @@ protected:
 	int hp;
 	int glory;
 	std::string name;
+	std::string templateName;
 public:
+	const std::string &getTemplateName() const;
+	void setTemplateName(const std::string &templateName);
 	int getHp() const;
 	void setHp(int hp);
 	int getGlory() const;

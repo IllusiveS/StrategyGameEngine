@@ -2,5 +2,6 @@
     "glory": 1,
     "name": "unit",
     "strength": 5,
+    "templateName": "BASIC_UNIT",
     "templateType": "UNIT"
 }
