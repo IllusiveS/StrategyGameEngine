@@ -5,6 +5,7 @@
 #ifndef STRATEGYGAME_TERRAINMANAGER_H
 #define STRATEGYGAME_TERRAINMANAGER_H
 
+#include <dirent.h>
 
 class TerrainManager {
 	//TODO odczyt jsonów terenów z plików z katalogu
