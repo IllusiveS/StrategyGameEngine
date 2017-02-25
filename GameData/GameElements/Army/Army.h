@@ -8,42 +8,49 @@
 #include <string>
 #include <lua.h>
 #include "json/json.hpp"
+namespace BaseModel {
+	using json = nlohmann::json;
 
-using json = nlohmann::json;
+	class Army {
+		int x;
+		int y;
+		int mov;
+		int maxMov;
+		std::string name;
+		std::string templateName;
+		std::string templateType;
+	public:
+		int getX() const;
 
-class Army {
-	int x;
-	int y;
-	int mov;
-	int maxMov;
-	std::string name;
-	std::string templateName;
-	std::string templateType;
-public:
-	int getX() const;
-	void setX(int x);
+		void setX(int x);
 
-	int getY() const;
-	void setY(int y);
+		int getY() const;
 
-	int getMov() const;
-	void setMov(int mov);
+		void setY(int y);
 
-	int getMaxMov() const;
-	void setMaxMov(int maxMov);
+		int getMov() const;
 
-	const std::string &getName() const;
-	void setName(const std::string &name);
+		void setMov(int mov);
 
-	const std::string &getTemplateName() const;
-	void setTemplateName(const std::string &templateName);
+		int getMaxMov() const;
 
-	const std::string &getTemplateType() const;
-	void setTemplateType(const std::string &templateType);
+		void setMaxMov(int maxMov);
 
-	static void ExportToLua(lua_State * L);
-	json SerializeToJson();
-};
+		const std::string &getName() const;
 
+		void setName(const std::string &name);
 
+		const std::string &getTemplateName() const;
+
+		void setTemplateName(const std::string &templateName);
+
+		const std::string &getTemplateType() const;
+
+		void setTemplateType(const std::string &templateType);
+
+		static void ExportToLua(lua_State *L);
+
+		json SerializeToJson();
+	};
+}
 #endif //STRATEGYGAME_ARMY_H

@@ -9,34 +9,43 @@
 #include "lua.hpp"
 #include "json/json.hpp"
 
-using json = nlohmann::json;
+namespace BaseModel {
+	using json = nlohmann::json;
 
-class Unit {
-protected:
-	int hp;
-	int glory;
-	std::string name;
-	std::string templateName;
-public:
-	const std::string &getTemplateName() const;
-	void setTemplateName(const std::string &templateName);
-	int getHp() const;
-	void setHp(int hp);
-	int getGlory() const;
-	void setGlory(int glory);
-	const std::string &getName() const;
-	void setName(const std::string &name);
+	class Unit {
+	protected:
+		int hp;
+		int glory;
+		std::string name;
+		std::string templateName;
+	public:
+		const std::string &getTemplateName() const;
 
-	static void ExportToLua(lua_State * L);
+		void setTemplateName(const std::string &templateName);
 
-protected:
-	static Unit * CreateUnitFromJson(json j);//TODO odczytywanie z pliku
-	Unit(json j);
+		int getHp() const;
 
-public:
-	Unit();
-	json SerializeToJson();
-};
+		void setHp(int hp);
 
+		int getGlory() const;
+
+		void setGlory(int glory);
+
+		const std::string &getName() const;
+
+		void setName(const std::string &name);
+
+		static void ExportToLua(lua_State *L);
+
+	protected:
+		static Unit *CreateUnitFromJson(json j);//TODO odczytywanie z pliku
+		Unit(json j);
+
+	public:
+		Unit();
+
+		json SerializeToJson();
+	};
+}
 
 #endif //STRATEGYGAME_UNIT_H

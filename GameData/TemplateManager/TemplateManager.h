@@ -6,7 +6,6 @@
 #define STRATEGYGAME_TEMPLATEMANAGER_H
 
 
-#include <TemplateManager/IndividualManagers/TextureManager.h>
 #include <TemplateManager/IndividualManagers/TerrainManager.h>
 #include <TemplateManager/IndividualManagers/MapManager.h>
 #include <TemplateManager/IndividualManagers/ArmyManager.h>
@@ -14,7 +13,6 @@
 
 class TemplateManager {
 	//TODO odczyt danych z każdego katalogu z danymi (bendom mody)
-	TextureManager textureManager;
 	TerrainManager terrainManager;
 	MapManager mapManager;
 	ArmyManager armyManager;

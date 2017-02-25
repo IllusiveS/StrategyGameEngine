@@ -11,7 +11,7 @@
 void TemplateManager::ReadTemplates() {
 	DIR *pdir = NULL;
 	struct dirent *pent = NULL;
-	std::string gameDataDir = "./../GameData/";
+	std::string gameDataDir = "./GameData/";
 	pdir = opendir(gameDataDir.c_str());
 	if(pdir == NULL) {
 		printf("\nERROR! No modules in gamedata found");

@@ -5,71 +5,73 @@
 #include "Unit.h"
 #include "LuaBridge/LuaBridge.h"
 
-void Unit::ExportToLua(lua_State *L) {
-	using namespace luabridge;
-	//TODO dokończyć export do luły
-	getGlobalNamespace(L)
-			.beginClass<Unit>("Unit")
-					.addData("name", &Unit::name)
-			.endClass()
-	.endNamespace();
-}
-
-json Unit::SerializeToJson() {
-	json j;
-	j["templateType"] = "UNIT";
-	j["templateName"] = templateName;
-	j["name"] = name;
-	j["strength"] = hp;
-	j["glory"] = glory;
-	return j;
-}
-
-Unit::Unit(json j) {
-	name = j["name"];
-	hp = j["strength"];
-	glory = j["glory"];
-}
-
-Unit *Unit::CreateUnitFromJson(json j) {
-	if(j["templateType"] == "UNIT") {
-		return new Unit(j);
+namespace BaseModel {
+	void Unit::ExportToLua(lua_State *L) {
+		using namespace luabridge;
+		//TODO dokończyć export do luły
+		getGlobalNamespace(L)
+				.beginClass<Unit>("Unit")
+				.addData("name", &Unit::name)
+				.endClass()
+				.endNamespace();
 	}
-	return nullptr;
-}
 
-int Unit::getHp() const {
-	return hp;
-}
+	json Unit::SerializeToJson() {
+		json j;
+		j["templateType"] = "UNIT";
+		j["templateName"] = templateName;
+		j["name"] = name;
+		j["strength"] = hp;
+		j["glory"] = glory;
+		return j;
+	}
 
-void Unit::setHp(int hp) {
-	Unit::hp = hp;
-}
+	Unit::Unit(json j) {
+		name = j["name"];
+		hp = j["strength"];
+		glory = j["glory"];
+	}
 
-int Unit::getGlory() const {
-	return glory;
-}
+	Unit *Unit::CreateUnitFromJson(json j) {
+		if (j["templateType"] == "UNIT") {
+			return new Unit(j);
+		}
+		return nullptr;
+	}
 
-void Unit::setGlory(int glory) {
-	Unit::glory = glory;
-}
+	int Unit::getHp() const {
+		return hp;
+	}
 
-const std::string &Unit::getName() const {
-	return name;
-}
+	void Unit::setHp(int hp) {
+		Unit::hp = hp;
+	}
 
-void Unit::setName(const std::string &name) {
-	Unit::name = name;
-}
+	int Unit::getGlory() const {
+		return glory;
+	}
 
-Unit::Unit() {
+	void Unit::setGlory(int glory) {
+		Unit::glory = glory;
+	}
 
-}
+	const std::string &Unit::getName() const {
+		return name;
+	}
 
-const std::string &Unit::getTemplateName() const {
-	return templateName;
-}
+	void Unit::setName(const std::string &name) {
+		Unit::name = name;
+	}
 
-void Unit::setTemplateName(const std::string &templateName) {
-	Unit::templateName = templateName;
+	Unit::Unit() {
+
+	}
+
+	const std::string &Unit::getTemplateName() const {
+		return templateName;
+	}
+
+	void Unit::setTemplateName(const std::string &templateName) {
+		Unit::templateName = templateName;
+	}
 }

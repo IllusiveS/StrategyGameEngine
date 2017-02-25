@@ -10,35 +10,41 @@
 
 using json = nlohmann::json;
 
-class MapTile {
-protected:
-	int x;
-	int y;
-	std::string armyTemplate;
-	std::string templateName;
-	std::string templateType;
+namespace BaseModel {
+	class MapTile {
+	protected:
+		int x;
+		int y;
+		std::string armyTemplate;
+		std::string templateName;
+		std::string templateType;
 
-public:
-	int getX() const;
-	void setX(int x);
+	public:
+		int getX() const;
 
-	int getY() const;
-	void setY(int y);
+		void setX(int x);
 
-	const std::string &getArmyTemplate() const;
-	void setArmyTemplate(const std::string &armyTemplate);
+		int getY() const;
 
-	const std::string &getTemplateName() const;
-	void setTemplateName(const std::string &templateName);
+		void setY(int y);
 
-	const std::string &getTemplateType() const;
-	void setTemplateType(const std::string &templateType);
+		const std::string &getArmyTemplate() const;
 
-public:
-	static MapTile * CreateUnitFromJson(json j);//TODO odczytywanie z JSONa
-	MapTile();//TODO może jakiś konstruktor z parametrami?
-	json SerializeToJson();
-};
+		void setArmyTemplate(const std::string &armyTemplate);
 
+		const std::string &getTemplateName() const;
+
+		void setTemplateName(const std::string &templateName);
+
+		const std::string &getTemplateType() const;
+
+		void setTemplateType(const std::string &templateType);
+
+	public:
+		static MapTile *CreateUnitFromJson(json j);//TODO odczytywanie z JSONa
+		MapTile();//TODO może jakiś konstruktor z parametrami?
+		json SerializeToJson();
+	};
+}
 
 #endif //STRATEGYGAME_MAPTILE_H
