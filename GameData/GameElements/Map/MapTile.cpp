@@ -60,7 +60,31 @@ namespace BaseModel {
 		j["y"] = y;
 		j["armyTemplate"] = armyTemplate;
 		j["templateName"] = templateName;
-		j["templateType"] = templateType;
+		j["templateType"] = "MAPTILE";
 		return j;
+	}
+
+	const std::string &MapTile::getIsPassableFunction() const {
+		return isPassableFunction;
+	}
+
+	void MapTile::setIsPassableFunction(const std::string &isPassableFunction) {
+		MapTile::isPassableFunction = isPassableFunction;
+	}
+
+	const std::string &MapTile::getIsEnterableFunction() const {
+		return isEnterableFunction;
+	}
+
+	void MapTile::setIsEnterableFunction(const std::string &isEnterableFunction) {
+		MapTile::isEnterableFunction = isEnterableFunction;
+	}
+
+	const std::string &MapTile::getIsAttackableFunction() const {
+		return isAttackableFunction;
+	}
+
+	void MapTile::setIsAttackableFunction(const std::string &isAttackableFunction) {
+		MapTile::isAttackableFunction = isAttackableFunction;
 	}
 }

@@ -15,6 +15,23 @@ namespace BaseModel {
 	protected:
 		int x;
 		int y;
+		std::string isPassableFunction;
+		std::string isEnterableFunction;
+	public:
+		const std::string &getIsPassableFunction() const;
+
+		void setIsPassableFunction(const std::string &isPassableFunction);
+
+		const std::string &getIsEnterableFunction() const;
+
+		void setIsEnterableFunction(const std::string &isEnterableFunction);
+
+		const std::string &getIsAttackableFunction() const;
+
+		void setIsAttackableFunction(const std::string &isAttackableFunction);
+
+	protected:
+		std::string isAttackableFunction;
 		std::string armyTemplate;
 		std::string templateName;
 		std::string templateType;
