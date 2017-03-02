@@ -34,5 +34,13 @@ namespace BaseModel{
 		j["templateName"] = templateName;
 		return j;
 	}
+
+	const std::string &BasicElement::getModule() const {
+		return module;
+	}
+
+	void BasicElement::setModule(const std::string &module) {
+		BasicElement::module = module;
+	}
 }
 

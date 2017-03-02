@@ -11,3 +11,11 @@ void ModuleManager::createModule(std::string templateName, ModuleCreationParamet
 	newModule->setDescription(params.description);
 	modules.insert(newModule);
 }
+
+ModuleManager::~ModuleManager() {
+
+}
+
+void ModuleManager::SaveModules() {
+
+}

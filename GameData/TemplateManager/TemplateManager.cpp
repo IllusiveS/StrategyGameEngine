@@ -32,11 +32,48 @@ void TemplateManager::ReadTemplates() {
 			continue;
 		}
 		// otherwise, it was initialised correctly. let's print it on the console:
-		ReadSingleTemplate(gameDataDir + pent->d_name);
+		ReadSingleModule(pent->d_name, pent->d_name);
 	}
 }
 
-void TemplateManager::ReadSingleTemplate(std::string directory) {
+void TemplateManager::ReadSingleModule(std::string moduleName,
+                                       std::string directory) {
 	printf("found directory %s \n", directory.c_str());
-	terrainManager.ReadTemplatesFromModule(directory);
+	terrainManager.ReadTemplatesFromModule(directory, moduleName);
+}
+
+void TemplateManager::SaveTemplates() {
+	terrainManager.SaveTemplates();
+}
+
+const TerrainManager &TemplateManager::getTerrainManager() const {
+	return terrainManager;
+}
+
+void TemplateManager::setTerrainManager(const TerrainManager &terrainManager) {
+	TemplateManager::terrainManager = terrainManager;
+}
+
+const MapManager &TemplateManager::getMapManager() const {
+	return mapManager;
+}
+
+void TemplateManager::setMapManager(const MapManager &mapManager) {
+	TemplateManager::mapManager = mapManager;
+}
+
+const ArmyManager &TemplateManager::getArmyManager() const {
+	return armyManager;
+}
+
+void TemplateManager::setArmyManager(const ArmyManager &armyManager) {
+	TemplateManager::armyManager = armyManager;
+}
+
+const ModuleManager &TemplateManager::getModuleManager() const {
+	return moduleManager;
+}
+
+void TemplateManager::setModuleManager(const ModuleManager &moduleManager) {
+	TemplateManager::moduleManager = moduleManager;
 }

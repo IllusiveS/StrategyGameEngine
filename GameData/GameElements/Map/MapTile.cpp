@@ -64,27 +64,27 @@ namespace BaseModel {
 		return j;
 	}
 
-	const std::string &MapTile::getIsPassableFunction() const {
-		return isPassableFunction;
+	const std::string &MapTile::getIsPassableFunctionTemplateName() const {
+		return isPassableFunctionTemplateName;
 	}
 
-	void MapTile::setIsPassableFunction(const std::string &isPassableFunction) {
-		MapTile::isPassableFunction = isPassableFunction;
+	void MapTile::setIsPassableFunctionTemplateName(const std::string &isPassableFunction) {
+		MapTile::isPassableFunctionTemplateName = isPassableFunction;
 	}
 
-	const std::string &MapTile::getIsEnterableFunction() const {
-		return isEnterableFunction;
+	const std::string &MapTile::getIsEnterableFunctionTemplateName() const {
+		return isEnterableFunctionTemplateName;
 	}
 
-	void MapTile::setIsEnterableFunction(const std::string &isEnterableFunction) {
-		MapTile::isEnterableFunction = isEnterableFunction;
+	void MapTile::setIsEnterableFunctionTemplateName(const std::string &isEnterableFunction) {
+		MapTile::isEnterableFunctionTemplateName = isEnterableFunction;
 	}
 
-	const std::string &MapTile::getIsAttackableFunction() const {
-		return isAttackableFunction;
+	const std::string &MapTile::getIsAttackableFunctionTemplateName() const {
+		return isAttackableFunctionTemplateName;
 	}
 
-	void MapTile::setIsAttackableFunction(const std::string &isAttackableFunction) {
-		MapTile::isAttackableFunction = isAttackableFunction;
+	void MapTile::setIsAttackableFunctionTemplateName(const std::string &isAttackableFunction) {
+		MapTile::isAttackableFunctionTemplateName = isAttackableFunction;
 	}
 }

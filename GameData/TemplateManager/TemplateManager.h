@@ -10,16 +10,31 @@
 #include <TemplateManager/IndividualManagers/MapManager.h>
 #include <TemplateManager/IndividualManagers/ArmyManager.h>
 #include <string>
+#include <TemplateManager/IndividualManagers/ModuleManager.h>
 
 class TemplateManager {
 	//TODO odczyt danych z każdego katalogu z danymi (bendom mody)
 	TerrainManager terrainManager;
 	MapManager mapManager;
 	ArmyManager armyManager;
-	//TODO dostęp do informacji o modach?
+	ModuleManager moduleManager;
+public:
+	const TerrainManager &getTerrainManager() const;
+	void setTerrainManager(const TerrainManager &terrainManager);
+
+	const MapManager &getMapManager() const;
+	void setMapManager(const MapManager &mapManager);
+
+	const ArmyManager &getArmyManager() const;
+	void setArmyManager(const ArmyManager &armyManager);
+
+	const ModuleManager &getModuleManager() const;
+	void setModuleManager(const ModuleManager &moduleManager);
+
 public:
 	void ReadTemplates();
-	void ReadSingleTemplate(std::string directory);
+	void SaveTemplates();
+	void ReadSingleModule(std::string moduleName, std::string directory);
 };
 
 

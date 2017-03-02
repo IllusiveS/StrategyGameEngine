@@ -15,6 +15,9 @@ namespace BaseModel {
 	protected:
 		std::string templateName;
 		std::string templateType;
+		std::string module;
+
+	protected:
 
 		BasicElement();
 
@@ -22,12 +25,13 @@ namespace BaseModel {
 
 	public:
 		const std::string &getTemplateName() const;
-
 		void setTemplateName(const std::string &templateName);
 
 		const std::string &getTemplateType() const;
-
 		void setTemplateType(const std::string &templateType);
+
+		const std::string &getModule() const;
+		void setModule(const std::string &module);
 
 		virtual json serializeToJson();
 	};

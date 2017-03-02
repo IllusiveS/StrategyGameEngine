@@ -9,8 +9,10 @@
 #include <map>
 #include <string>
 #include <GameElements/Map/MapTile.h>
+#include "json/json.hpp"
 
 using namespace BaseModel;
+using json = nlohmann::json;
 
 class TerrainManager {
 protected:
@@ -19,7 +21,12 @@ protected:
 	//TODO dostęp do obiektów terenów ze stringa
 public:
 	MapTile * GetTemplate(std::string templateName);
-	void ReadTemplatesFromModule(std::string module);
+	void ReadTemplatesFromModule(std::string directory, std::string module);
+	void AddTemplate(json j);
+
+	void ReadSingleTemplate(std::string directory, std::string moduleName);
+
+	void SaveTemplates();
 };
 
 
