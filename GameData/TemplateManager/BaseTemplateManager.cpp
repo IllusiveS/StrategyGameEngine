@@ -3,22 +3,10 @@
 //
 
 #include "BaseTemplateManager.h"
+#include <dirent.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <fstream>
 
-template <class Model>
-Model *BaseTemplateManager<Model>::GetTemplate(std::string templateName) {
-	Model * foundModel;
-
-	foundModel = templatesMap[templateName];
-
-	return foundModel;
-}
-
-template <class Model>
-std::vector<std::string> BaseTemplateManager<Model>::GetAllJsonsName(std::string directory) {
-	return std::vector<std::string>();
-}
-
-template <class Model>
-void BaseTemplateManager<Model>::ReadTemplatesFromJsons(std::string directory, std::vector<std::string> Jsons) {
-
-}

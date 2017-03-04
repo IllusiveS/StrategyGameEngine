@@ -9,11 +9,13 @@
 int main (){
 	TemplateManager manager;
 	//manager.ReadTemplates();
-	MapTile tile;
-	tile.setTemplateName("PLAINS");
-	tile.setX(1);
-	tile.setY(2);
-	json tileJson = tile.SerializeToJson();
+	MapTile * tile = new MapTile();
+	tile->setTemplateName("plains");
+	tile->setX(1);
+	tile->setY(2);
+	tile->setArmyTemplate("");
+	tile->setModule("Core");
+	manager.terrainManager.AddTemplate("plains", tile);
 
 	Module module;
 	module.setAuthor("IllusiveS");
@@ -21,11 +23,8 @@ int main (){
 	module.setName("example mod");
 	module.setTemplateName("MODULE");
 
-	std::ofstream moduleData("GameData/Modules/Core/module.json");
-	moduleData << module.serializeToJson();
-
-	std::ofstream out("GameData/Modules/Core/Json/MapTiles/testTile.json");
-	out << tileJson;
-	out.close();
+//	std::ofstream moduleData("GameData/Modules/Core/module.json");
+//	moduleData << module.serializeToJson();
+	manager.SaveTemplates();
 	return 0;
 }

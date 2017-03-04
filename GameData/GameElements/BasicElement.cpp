@@ -32,6 +32,8 @@ namespace BaseModel{
 	json BasicElement::serializeToJson() {
 		json j;
 		j["templateName"] = templateName;
+		j["templateType"] = templateType;
+		j["module"] = module;
 		return j;
 	}
 

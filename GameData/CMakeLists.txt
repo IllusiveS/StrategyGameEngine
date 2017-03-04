@@ -16,5 +16,5 @@ add_executable(GameDataReadTest.exe ${SOURCE_FILES} ReadTest.cpp)
 add_dependencies(GameDataSaveTest.exe GameData)
 add_dependencies(GameDataReadTest.exe GameData)
 
-target_link_libraries(GameDataSaveTest.exe "${CMAKE_CURRENT_SOURCE_DIR}/libGameData.a" ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES} ${LUA_LIBRARIES} ${SDLMIXER2_LIBRARIES})
-target_link_libraries(GameDataReadTest.exe "${CMAKE_CURRENT_SOURCE_DIR}/libGameData.a" ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES} ${LUA_LIBRARIES} ${SDLMIXER2_LIBRARIES})
+target_link_libraries(GameDataSaveTest.exe ${Boost_LIBRARIES} "${CMAKE_CURRENT_SOURCE_DIR}/libGameData.a" ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES} ${LUA_LIBRARIES} ${SDLMIXER2_LIBRARIES})
+target_link_libraries(GameDataReadTest.exe ${Boost_LIBRARIES} "${CMAKE_CURRENT_SOURCE_DIR}/libGameData.a" ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES} ${LUA_LIBRARIES} ${SDLMIXER2_LIBRARIES})

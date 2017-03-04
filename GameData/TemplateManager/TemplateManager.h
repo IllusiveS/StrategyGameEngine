@@ -14,22 +14,11 @@
 
 class TemplateManager {
 	//TODO odczyt danych z każdego katalogu z danymi (bendom mody)
+public:
 	TerrainManager terrainManager;
 	MapManager mapManager;
 	ArmyManager armyManager;
 	ModuleManager moduleManager;
-public:
-	const TerrainManager &getTerrainManager() const;
-	void setTerrainManager(const TerrainManager &terrainManager);
-
-	const MapManager &getMapManager() const;
-	void setMapManager(const MapManager &mapManager);
-
-	const ArmyManager &getArmyManager() const;
-	void setArmyManager(const ArmyManager &armyManager);
-
-	const ModuleManager &getModuleManager() const;
-	void setModuleManager(const ModuleManager &moduleManager);
 
 public:
 	void ReadTemplates();

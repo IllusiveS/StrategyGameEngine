@@ -29,38 +29,20 @@ namespace BaseModel {
 		MapTile::armyTemplate = armyTemplate;
 	}
 
-	const std::string &MapTile::getTemplateName() const {
-		return templateName;
-	}
-
-	void MapTile::setTemplateName(const std::string &templateName) {
-		MapTile::templateName = templateName;
-	}
-
-	const std::string &MapTile::getTemplateType() const {
-		return templateType;
-	}
-
-	void MapTile::setTemplateType(const std::string &templateType) {
-		MapTile::templateType = templateType;
-	}
-
 	MapTile *MapTile::CreateUnitFromJson(json j) {
 		return nullptr;//TODO zrobić odczyt z JSONa
 		//TODO zmienić nazwę metody na maptile
 	}
 
 	MapTile::MapTile() {
-
+		templateType = "PLAINS";
 	}
 
-	json MapTile::SerializeToJson() {
-		json j;
+	json MapTile::serializeToJson() {
+		json j = BasicElement::serializeToJson();
 		j["x"] = x;
 		j["y"] = y;
 		j["armyTemplate"] = armyTemplate;
-		j["templateName"] = templateName;
-		j["templateType"] = "MAPTILE";
 		return j;
 	}
 
@@ -86,5 +68,29 @@ namespace BaseModel {
 
 	void MapTile::setIsAttackableFunctionTemplateName(const std::string &isAttackableFunction) {
 		MapTile::isAttackableFunctionTemplateName = isAttackableFunction;
+	}
+
+	const std::string &MapTile::getTemplateName() const {
+		return BasicElement::getTemplateName();
+	}
+
+	void MapTile::setTemplateName(const std::string &templateName) {
+		BasicElement::setTemplateName(templateName);
+	}
+
+	const std::string &MapTile::getTemplateType() const {
+		return BasicElement::getTemplateType();
+	}
+
+	void MapTile::setTemplateType(const std::string &templateType) {
+		BasicElement::setTemplateType(templateType);
+	}
+
+	const std::string &MapTile::getModule() const {
+		return BasicElement::getModule();
+	}
+
+	void MapTile::setModule(const std::string &module) {
+		BasicElement::setModule(module);
 	}
 }

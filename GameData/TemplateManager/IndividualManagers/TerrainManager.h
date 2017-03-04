@@ -9,24 +9,28 @@
 #include <map>
 #include <string>
 #include <GameElements/Map/MapTile.h>
+#include <TemplateManager/BaseTemplateManager.h>
 #include "json/json.hpp"
 
 using namespace BaseModel;
 using json = nlohmann::json;
 
-class TerrainManager {
+class TerrainManager : public BaseTemplateManager<MapTile> {
 protected:
-	std::map<std::string, MapTile *> tiles;
 	//TODO odczyt jsonów terenów z plików z katalogu
 	//TODO dostęp do obiektów terenów ze stringa
 public:
-	MapTile * GetTemplate(std::string templateName);
-	void ReadTemplatesFromModule(std::string directory, std::string module);
-	void AddTemplate(json j);
+	std::string GetTemplateType() override;
 
-	void ReadSingleTemplate(std::string directory, std::string moduleName);
+	void AddTemplate(json j) override;
 
-	void SaveTemplates();
+	void AddTemplate(std::string, MapTile *);
+
+	void ReadTeamplates() override;
+
+	void SaveTemplate(MapTile *model) override;
+
+	std::string GetSubdirectory() override;
 };
 
 

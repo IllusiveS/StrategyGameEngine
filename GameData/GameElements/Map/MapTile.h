@@ -6,12 +6,13 @@
 #define STRATEGYGAME_MAPTILE_H
 
 #include <string>
+#include <GameElements/BasicElement.h>
 #include "json/json.hpp"
 
 using json = nlohmann::json;
 
 namespace BaseModel {
-	class MapTile {
+	class MapTile : public BasicElement {
 	protected:
 		int x;
 		int y;
@@ -48,18 +49,23 @@ namespace BaseModel {
 
 		void setArmyTemplate(const std::string &armyTemplate);
 
-		const std::string &getTemplateName() const;
+		const std::string &getTemplateName() const override;
 
-		void setTemplateName(const std::string &templateName);
+		void setTemplateName(const std::string &templateName) override;
 
-		const std::string &getTemplateType() const;
+		const std::string &getTemplateType() const override;
 
-		void setTemplateType(const std::string &templateType);
+		void setTemplateType(const std::string &templateType) override;
+
+		const std::string &getModule() const override;
+
+		void setModule(const std::string &module) override;
+
+		json serializeToJson() override;
 
 	public:
 		static MapTile *CreateUnitFromJson(json j);//TODO odczytywanie z JSONa
-		MapTile();//TODO może jakiś konstruktor z parametrami?
-		json SerializeToJson();
+		MapTile();//TODO może jakiś konstruktor z parametrami?);
 	};
 }
 

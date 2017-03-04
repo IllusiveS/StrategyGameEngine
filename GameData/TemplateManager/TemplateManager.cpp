@@ -13,8 +13,9 @@ void TemplateManager::ReadTemplates() {
 	struct dirent *pent = NULL;
 	std::string gameDataDir = "./GameData/Modules/";
 	pdir = opendir(gameDataDir.c_str());
+	printf("Looking for modules in %s \n", gameDataDir.c_str());
 	if(pdir == NULL) {
-		printf("\nERROR! No modules found");
+		printf("ERROR! No modules found\n");
 		exit (1);
 	}
 
@@ -32,48 +33,16 @@ void TemplateManager::ReadTemplates() {
 			continue;
 		}
 		// otherwise, it was initialised correctly. let's print it on the console:
-		ReadSingleModule(pent->d_name, pent->d_name);
+		ReadSingleModule(pent->d_name, gameDataDir + pent->d_name);
 	}
 }
 
 void TemplateManager::ReadSingleModule(std::string moduleName,
                                        std::string directory) {
-	printf("found directory %s \n", directory.c_str());
-	terrainManager.ReadTemplatesFromModule(directory, moduleName);
+	printf("found directory %s with module %s \n", directory.c_str(), moduleName.c_str());
+	terrainManager.ReadTemplatesFromJsons(directory);
 }
 
 void TemplateManager::SaveTemplates() {
 	terrainManager.SaveTemplates();
-}
-
-const TerrainManager &TemplateManager::getTerrainManager() const {
-	return terrainManager;
-}
-
-void TemplateManager::setTerrainManager(const TerrainManager &terrainManager) {
-	TemplateManager::terrainManager = terrainManager;
-}
-
-const MapManager &TemplateManager::getMapManager() const {
-	return mapManager;
-}
-
-void TemplateManager::setMapManager(const MapManager &mapManager) {
-	TemplateManager::mapManager = mapManager;
-}
-
-const ArmyManager &TemplateManager::getArmyManager() const {
-	return armyManager;
-}
-
-void TemplateManager::setArmyManager(const ArmyManager &armyManager) {
-	TemplateManager::armyManager = armyManager;
-}
-
-const ModuleManager &TemplateManager::getModuleManager() const {
-	return moduleManager;
-}
-
-void TemplateManager::setModuleManager(const ModuleManager &moduleManager) {
-	TemplateManager::moduleManager = moduleManager;
 }
