@@ -11,8 +11,11 @@
 #include <vector>
 #include <dirent.h>
 #include <fstream>
+#include <boost/filesystem.hpp>
 
 using json = nlohmann::json;
+using namespace boost::filesystem;
+using namespace std;
 
 template<class Model>
 class BaseTemplateManager {
@@ -31,40 +34,54 @@ public:
 	std::vector<std::string> GetAllJsonsName(std::string directory) {
 		std::vector<std::string> names;
 
-		DIR *pdir = NULL;
-		struct dirent *pent = NULL;
 		std::string gameDataDir = directory;
-		pdir = opendir(gameDataDir.c_str());
-		if(pdir == NULL) {
-			printf("Found no elements of type %s", GetTemplateType().c_str());
-			exit (1);
-		}
+		path p = path(gameDataDir);
 
-		while (pent = readdir (pdir)) // while there is still something in the directory to list
+		try
 		{
-			if (pent == NULL)
+			if (exists(p))    // does p actually exist?
 			{
-				printf ("ERROR! pent could not be initialised correctly");
-				exit (3);
+				if (is_directory(p))      // is p a directory?
+				{
+					cout << p << " is a directory containing:\n";
+
+					auto itr = directory_iterator(p);
+					vector<path> files;
+					copy(directory_iterator(p), directory_iterator(),
+					     back_inserter(files));
+
+					sort(files.begin(), files.end());
+
+					for(auto i = files.begin(); i != files.end(); i++) {
+						path currentPath = *i;
+						if(is_directory(currentPath)){
+							continue;
+						}
+						names.push_back(currentPath.string());
+						printf("Found file %s\n", currentPath.string().c_str());
+					}
+				}
+				else
+					cout << p << " exists, but is neither a regular file nor a directory\n";
 			}
-			std::string name(pent->d_name);
-			if(strcmp(name.c_str(), ".") == 0 || strcmp(name.c_str(), "..") == 0)
-			{
-				//printf("excluded directory %s\n", name.c_str());
-				continue;
-			}
-			// otherwise, it was initialised correctly. let's print it on the console:
-			names.push_back(name);
+			else
+				cout << p << " does not exist\n";
 		}
 
+		catch (const filesystem_error& ex)
+		{
+			cout << ex.what() << '\n';
+		}
 		return names;
 	}
 
 	void ReadTemplatesFromJsons(std::string directory) {
-		std::vector<std::string> Jsons = GetAllJsonsName(directory);
+		std::string formatedDir = directory + "/" + GetSubdirectory();
+		printf("Reading templates from %s\n", formatedDir.c_str());
+		std::vector<std::string> Jsons = GetAllJsonsName(formatedDir);
 		for( auto itr = Jsons.begin(); itr != Jsons.end(); itr++) {
 			std::string name = *itr;
-			printf("Reading template from %s", name.c_str());
+			printf("Reading template from %s\n", name.c_str());
 			json j;
 
 			std::ifstream ifs{name};
