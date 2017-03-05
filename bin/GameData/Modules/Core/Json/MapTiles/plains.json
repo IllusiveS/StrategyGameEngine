@@ -1,8 +1,9 @@
 {
-    "armyTemplate": "",
+    "isAttackableFunctionTemplate": "default",
+    "isEnterableFunctionTemplateName": "default",
+    "isPassableFunctionTemplateName": "default",
     "module": "Core",
+    "retrieveMovementCostFunctionTemplateName": "default",
     "templateName": "plains",
-    "templateType": "",
-    "x": 1,
-    "y": 2
+    "templateType": "PLAINS"
 }

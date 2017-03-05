@@ -14,9 +14,6 @@ void TerrainManager::AddTemplate(json j) {
 	newTile->setModule(j["module"]);
 	newTile->setTemplateName(name);
 	newTile->setTemplateType(j["templateType"]);
-	newTile->setArmyTemplate(j["armyTemplate"]);
-	newTile->setX(j["x"]);
-	newTile->setY(j["y"]);
 	templatesMap.insert(std::pair<std::string, MapTile *>(name, newTile));
 }
 

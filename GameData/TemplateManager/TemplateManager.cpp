@@ -47,5 +47,6 @@ void TemplateManager::ReadSingleModule(std::string moduleName,
 }
 
 void TemplateManager::SaveTemplates() {
+	moduleManager.SaveTemplates();
 	terrainManager.SaveTemplates();
 }

@@ -8,10 +8,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../bin")
 
 set(SOURCE_FILES GameElements/Unit/Unit.cpp TemplateManager/TemplateManager.cpp TemplateManager/TemplateManager.h TemplateManager/IndividualManagers/TerrainManager.cpp TemplateManager/IndividualManagers/TerrainManager.h TemplateManager/IndividualManagers/MapManager.cpp TemplateManager/IndividualManagers/MapManager.h TemplateManager/IndividualManagers/ArmyManager.cpp TemplateManager/IndividualManagers/ArmyManager.h GameElements/Map/Map.cpp GameElements/Map/Map.h GameElements/Map/MapTile.cpp GameElements/Map/MapTile.h GameElements/Army/Army.cpp GameElements/Army/Army.h TemplateManager/IndividualManagers/ModuleManager.cpp TemplateManager/IndividualManagers/ModuleManager.h GameElements/Modules/Module.cpp GameElements/Modules/Module.h GameElements/BasicElement.cpp GameElements/BasicElement.h TemplateManager/BaseTemplateManager.cpp TemplateManager/BaseTemplateManager.h)
 
-add_library(GameData ${SOURCE_FILES})
+add_library(GameDataObj OBJECT ${SOURCE_FILES})
 
-add_executable(GameDataSaveTest.exe ${SOURCE_FILES} SaveTest.cpp)
-add_executable(GameDataReadTest.exe ${SOURCE_FILES} ReadTest.cpp)
+add_library(GameData $<TARGET_OBJECTS:GameDataObj>)
+
+add_executable(GameDataSaveTest.exe $<TARGET_OBJECTS:GameDataObj> SaveTest.cpp)
+add_executable(GameDataReadTest.exe $<TARGET_OBJECTS:GameDataObj> ReadTest.cpp)
 
 add_dependencies(GameDataSaveTest.exe GameData)
 add_dependencies(GameDataReadTest.exe GameData)

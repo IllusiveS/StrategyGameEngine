@@ -1,0 +1,8 @@
+{
+    "author": "IllusiveS",
+    "description": "example mod description",
+    "module": "Core",
+    "name": "Core",
+    "templateName": "Core",
+    "templateType": "MODULE"
+}

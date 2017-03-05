@@ -11,17 +11,21 @@ int main (){
 	//manager.ReadTemplates();
 	MapTile * tile = new MapTile();
 	tile->setTemplateName("plains");
-	tile->setX(1);
-	tile->setY(2);
-	tile->setArmyTemplate("");
 	tile->setModule("Core");
-	manager.terrainManager.AddTemplate("plains", tile);
+	tile->setIsAttackableFunctionTemplateName("default");
+	tile->setIsEnterableFunctionTemplateName("default");
+	tile->setIsPassableFunctionTemplateName("default");
+	tile->setRetrieveMovementCostFunctionTemplateName("default");
+	manager.terrainManager.AddTemplatePair("plains", tile);
 
-	Module module;
-	module.setAuthor("IllusiveS");
-	module.setDescription("example mod description");
-	module.setName("example mod");
-	module.setTemplateName("MODULE");
+	Module * module = new Module();
+	module->setAuthor("IllusiveS");
+	module->setDescription("example mod description");
+	module->setTemplateName("Core");
+	module->setTemplateType("MODULE");
+	module->setModule("Core");
+	manager.moduleManager.AddTemplatePair("Core", module);
+
 
 //	std::ofstream moduleData("GameData/Modules/Core/module.json");
 //	moduleData << module.serializeToJson();

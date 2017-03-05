@@ -23,6 +23,15 @@ protected:
 	std::map<std::string, Model *> templatesMap;
 	std::string templateDirectoryName;
 public:
+	virtual ~BaseTemplateManager() {
+		for(auto itr = templatesMap.begin(); itr != templatesMap.end(); itr++) {
+			std::pair<std::string, Model*> pair = *itr;
+			Model * currentModel = pair.second;
+			delete currentModel;
+		}
+		templatesMap.clear();
+	}
+
 	Model * GetTemplate(std::string templateName) {
 		Model * foundModel = nullptr;
 
@@ -94,6 +103,13 @@ public:
 	virtual void AddTemplate(json j) = 0;
 
 	virtual void SaveTemplate(Model * model) = 0;
+
+	void AddTemplatePair(std::string name, Model * model) {
+		templatesMap.insert(
+				std::pair<std::string, Model *>(name, model)
+		);
+	}
+
 	virtual void SaveTemplates() {
 		printf("Saving %s templates\n", GetTemplateType().c_str());
 		for(auto itr = templatesMap.begin(); itr != templatesMap.end(); itr++) {

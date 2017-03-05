@@ -5,30 +5,6 @@
 #include "MapTile.h"
 
 namespace BaseModel {
-	int MapTile::getX() const {
-		return x;
-	}
-
-	void MapTile::setX(int x) {
-		MapTile::x = x;
-	}
-
-	int MapTile::getY() const {
-		return y;
-	}
-
-	void MapTile::setY(int y) {
-		MapTile::y = y;
-	}
-
-	const std::string &MapTile::getArmyTemplate() const {
-		return armyTemplate;
-	}
-
-	void MapTile::setArmyTemplate(const std::string &armyTemplate) {
-		MapTile::armyTemplate = armyTemplate;
-	}
-
 	MapTile *MapTile::CreateUnitFromJson(json j) {
 		return nullptr;//TODO zrobić odczyt z JSONa
 		//TODO zmienić nazwę metody na maptile
@@ -40,9 +16,10 @@ namespace BaseModel {
 
 	json MapTile::serializeToJson() {
 		json j = BasicElement::serializeToJson();
-		j["x"] = x;
-		j["y"] = y;
-		j["armyTemplate"] = armyTemplate;
+		j["isPassableFunctionTemplateName"] = isPassableFunctionTemplateName;
+		j["isEnterableFunctionTemplateName"] = isEnterableFunctionTemplateName;
+		j["isAttackableFunctionTemplate"] = isAttackableFunctionTemplateName;
+		j["retrieveMovementCostFunctionTemplateName"] = retrieveMovementCostFunctionTemplateName;
 		return j;
 	}
 
@@ -92,5 +69,13 @@ namespace BaseModel {
 
 	void MapTile::setModule(const std::string &module) {
 		BasicElement::setModule(module);
+	}
+
+	const std::string &MapTile::getRetrieveMovementCostFunctionTemplateName() const {
+		return retrieveMovementCostFunctionTemplateName;
+	}
+
+	void MapTile::setRetrieveMovementCostFunctionTemplateName(const std::string &retrieveMovementCostFunctionTemplateName) {
+		MapTile::retrieveMovementCostFunctionTemplateName = retrieveMovementCostFunctionTemplateName;
 	}
 }
