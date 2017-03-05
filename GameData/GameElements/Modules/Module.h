@@ -14,15 +14,11 @@ using json = nlohmann::json;
 namespace BaseModel {
 	class Module : public BasicElement{
 	protected:
-		std::string name;
 		std::string author;
 		std::string description;
 	public:
 		Module();
 	public:
-		const std::string &getName() const;
-		void setName(const std::string &name);
-
 		const std::string &getAuthor() const;
 		void setAuthor(const std::string &author);
 

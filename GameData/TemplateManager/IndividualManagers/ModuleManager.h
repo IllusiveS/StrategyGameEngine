@@ -7,19 +7,24 @@
 
 #include <set>
 #include <string>
+#include <TemplateManager/BaseTemplateManager.h>
 #include "GameElements/Modules/Module.h"
 
 using namespace BaseModel;
 
-class ModuleManager {
-protected:
-	std::set<Module *> modules;
+class ModuleManager : public BaseTemplateManager<Module> {
 public:
 	void createModule(std::string templateName, ModuleCreationParameters params);
 
 	~ModuleManager();
 
-	void SaveModules();
+	string GetTemplateType() override;
+
+	string GetSubdirectory() override;
+
+	void AddTemplate(json j) override;
+
+	void SaveTemplate(Module *model) override;
 };
 
 

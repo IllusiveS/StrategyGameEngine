@@ -26,8 +26,6 @@ public:
 
 	void AddTemplate(std::string, MapTile *);
 
-	void ReadTeamplates() override;
-
 	void SaveTemplate(MapTile *model) override;
 
 	std::string GetSubdirectory() override;

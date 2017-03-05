@@ -39,7 +39,10 @@ void TemplateManager::ReadTemplates() {
 
 void TemplateManager::ReadSingleModule(std::string moduleName,
                                        std::string directory) {
-	printf("found directory %s with module %s \n", directory.c_str(), moduleName.c_str());
+	//printf("found directory %s with module %s \n", directory.c_str(), moduleName.c_str());
+	printf("[inf]READING MODULE %s\n", moduleName.c_str());
+	moduleManager.ReadTemplatesFromJsons(directory);
+	printf("[inf]READING MAPTILES FROM %s\n", moduleName.c_str());
 	terrainManager.ReadTemplatesFromJsons(directory);
 }
 

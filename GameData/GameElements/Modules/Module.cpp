@@ -5,14 +5,6 @@
 #include "Module.h"
 
 namespace BaseModel{
-	const std::string &Module::getName() const {
-		return name;
-	}
-
-	void Module::setName(const std::string &name) {
-		Module::name = name;
-	}
-
 	const std::string &Module::getAuthor() const {
 		return author;
 	}
@@ -33,7 +25,7 @@ namespace BaseModel{
 		json j = BasicElement::serializeToJson();
 		j["description"] = description;
 		j["author"] = author;
-		j["name"] = name;
+		j["name"] = templateName;
 		return j;
 	}
 

@@ -5,7 +5,7 @@
 #include "TerrainManager.h"
 
 std::string TerrainManager::GetTemplateType() {
-	return "MapTile";
+	return "MAPTILE";
 }
 
 void TerrainManager::AddTemplate(json j) {
@@ -18,10 +18,6 @@ void TerrainManager::AddTemplate(json j) {
 	newTile->setX(j["x"]);
 	newTile->setY(j["y"]);
 	templatesMap.insert(std::pair<std::string, MapTile *>(name, newTile));
-}
-
-void TerrainManager::ReadTeamplates() {
-
 }
 
 void TerrainManager::SaveTemplate(MapTile *model) {

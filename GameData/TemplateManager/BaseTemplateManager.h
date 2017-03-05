@@ -43,8 +43,6 @@ public:
 			{
 				if (is_directory(p))      // is p a directory?
 				{
-					cout << p << " is a directory containing:\n";
-
 					auto itr = directory_iterator(p);
 					vector<path> files;
 					copy(directory_iterator(p), directory_iterator(),
@@ -58,7 +56,7 @@ public:
 							continue;
 						}
 						names.push_back(currentPath.string());
-						printf("Found file %s\n", currentPath.string().c_str());
+						//printf("[inf]_Found file %s\n", currentPath.string().c_str());
 					}
 				}
 				else
@@ -77,11 +75,10 @@ public:
 
 	void ReadTemplatesFromJsons(std::string directory) {
 		std::string formatedDir = directory + "/" + GetSubdirectory();
-		printf("Reading templates from %s\n", formatedDir.c_str());
 		std::vector<std::string> Jsons = GetAllJsonsName(formatedDir);
 		for( auto itr = Jsons.begin(); itr != Jsons.end(); itr++) {
 			std::string name = *itr;
-			printf("Reading template from %s\n", name.c_str());
+			printf("[inf]_Reading template from %s\n", name.c_str());
 			json j;
 
 			std::ifstream ifs{name};
@@ -96,7 +93,6 @@ public:
 
 	virtual void AddTemplate(json j) = 0;
 
-	virtual void ReadTeamplates() = 0;
 	virtual void SaveTemplate(Model * model) = 0;
 	virtual void SaveTemplates() {
 		printf("Saving %s templates\n", GetTemplateType().c_str());
