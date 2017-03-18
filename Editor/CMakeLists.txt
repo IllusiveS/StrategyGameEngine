@@ -12,8 +12,8 @@ set(CMAKE_PREFIX_PATH ~/Qt5.7.0/5.7/gcc_64)
 
 find_package(Qt5Widgets)
 
-set(SOURCE_FILES main.cpp mainwindow.cpp )
+set(SOURCE_FILES main.cpp mainwindow.cpp EditorTemplates/EditorTemplateManager.cpp EditorTemplates/EditorTemplateManager.h)
 
 add_executable(StrategyGameEditor.exe ${SOURCE_FILES})
 add_dependencies(StrategyGameEditor.exe GameData)
-target_link_libraries(StrategyGameEditor.exe ${CMAKE_CURRENT_SOURCE_DIR}/../GameData/libGameData.a Qt5::Widgets  ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES} ${LUA_LIBRARIES} ${SDLMIXER2_LIBRARIES})
+target_link_libraries(StrategyGameEditor.exe ${CMAKE_CURRENT_SOURCE_DIR}/../GameData/libGameData.a Qt5::Widgets  ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES} ${LUA_LIBRARIES} ${SDLMIXER2_LIBRARIES} ${Boost_LIBRARIES})
