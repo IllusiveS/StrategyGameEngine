@@ -6,7 +6,7 @@
 #define STRATEGYGAME_TEXTUREMANAGER_H
 
 
-#include <bin/GameData/Texture/Texture.h>
+#include "Texture.h"
 #include <string>
 #include <map>
 

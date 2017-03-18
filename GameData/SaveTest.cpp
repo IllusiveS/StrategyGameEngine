@@ -16,6 +16,7 @@ int main (){
 	tile->setIsEnterableFunctionTemplateName("default");
 	tile->setIsPassableFunctionTemplateName("default");
 	tile->setRetrieveMovementCostFunctionTemplateName("default");
+	tile->setTextureName("Plains");
 	manager.terrainManager.AddTemplatePair("plains", tile);
 
 	Module * module = new Module();

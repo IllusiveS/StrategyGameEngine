@@ -10,7 +10,7 @@ namespace BaseModel {
 		//TODO zmienić nazwę metody na maptile
 	}
 
-	MapTile::MapTile() {
+	MapTile::MapTile() : baseMovementCost(1) {
 		templateType = "PLAINS";
 	}
 
@@ -20,6 +20,7 @@ namespace BaseModel {
 		j["isEnterableFunctionTemplateName"] = isEnterableFunctionTemplateName;
 		j["isAttackableFunctionTemplate"] = isAttackableFunctionTemplateName;
 		j["retrieveMovementCostFunctionTemplateName"] = retrieveMovementCostFunctionTemplateName;
+		j["textureName"] = textureName;
 		return j;
 	}
 
@@ -77,5 +78,21 @@ namespace BaseModel {
 
 	void MapTile::setRetrieveMovementCostFunctionTemplateName(const std::string &retrieveMovementCostFunctionTemplateName) {
 		MapTile::retrieveMovementCostFunctionTemplateName = retrieveMovementCostFunctionTemplateName;
+	}
+
+	int MapTile::getBaseMovementCost() const {
+		return baseMovementCost;
+	}
+
+	void MapTile::setBaseMovementCost(int baseMovementCost) {
+		MapTile::baseMovementCost = baseMovementCost;
+	}
+
+	const std::string &MapTile::getTextureName() const {
+		return textureName;
+	}
+
+	void MapTile::setTextureName(const std::string &textureName) {
+		this->textureName = textureName;
 	}
 }

@@ -14,12 +14,19 @@ using json = nlohmann::json;
 namespace BaseModel {
 	class MapTile : public BasicElement {
 	protected:
+		int baseMovementCost;
+
+	protected:
 		std::string isPassableFunctionTemplateName;
 		std::string isEnterableFunctionTemplateName;
 		std::string isAttackableFunctionTemplateName;
 		std::string retrieveMovementCostFunctionTemplateName;
+		std::string textureName;
 
 	public:
+		const std::string &getTextureName() const;
+		void setTextureName(const std::string &textureName);
+
 		const std::string &getIsPassableFunctionTemplateName() const;
 		void setIsPassableFunctionTemplateName(const std::string &isPassableFunction);
 
@@ -40,6 +47,9 @@ namespace BaseModel {
 
 		const std::string &getRetrieveMovementCostFunctionTemplateName() const;
 		void setRetrieveMovementCostFunctionTemplateName(const std::string &retrieveMovementCostFunctionTemplateName);
+
+		int getBaseMovementCost() const;
+		void setBaseMovementCost(int baseMovementCost);
 
 		json serializeToJson() override;
 

@@ -15,6 +15,8 @@
 class TemplateManager {
 	//TODO odczyt danych z każdego katalogu z danymi (bendom mody)
 public:
+	TemplateManager();
+
 	TerrainManager terrainManager;
 	MapManager mapManager;
 	ArmyManager armyManager;

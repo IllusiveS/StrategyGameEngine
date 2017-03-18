@@ -50,3 +50,7 @@ void TemplateManager::SaveTemplates() {
 	moduleManager.SaveTemplates();
 	terrainManager.SaveTemplates();
 }
+
+TemplateManager::TemplateManager(){
+	ReadTemplates();
+}
