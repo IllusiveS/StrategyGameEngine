@@ -69,4 +69,5 @@ Makefile*
 # QtCtreator CMake
 CMakeLists.txt.user*
 
+Editor/QtDebug/*
 .idea/
