@@ -13,6 +13,12 @@ namespace BaseModel {
 	using json = nlohmann::json;
 
 	class Sprite : public BasicElement {
+		public:
+			static Sprite * ReadSpriteFromFile(std::string location);
+
+		private:
+			Sprite(std::string name, SDL_Surface*);
+
 		protected:
 			SDL_Surface * surface;
 	};

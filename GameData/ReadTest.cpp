@@ -8,6 +8,6 @@
 
 int main (){
 	TemplateManager manager;
-	manager.ReadTemplates();
+	//manager.ReadTemplates();
 	return 0;
 }

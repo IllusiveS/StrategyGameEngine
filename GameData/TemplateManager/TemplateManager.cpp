@@ -32,8 +32,7 @@ void TemplateManager::ReadTemplates() {
 			//printf("excluded directory %s\n", name.c_str());
 			continue;
 		}
-		// otherwise, it was initialised correctly. let's print it on the console:
-		ReadSingleModule(pent->d_name, gameDataDir + pent->d_name);
+		ReadSingleModule(name, gameDataDir + name);
 	}
 }
 
