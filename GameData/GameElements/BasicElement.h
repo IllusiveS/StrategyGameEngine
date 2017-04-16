@@ -16,6 +16,7 @@ namespace BaseModel {
 		std::string templateName;
 		std::string templateType;
 		std::string module;
+		std::string location;
 
 	protected:
 
@@ -32,6 +33,9 @@ namespace BaseModel {
 
 		virtual const std::string &getModule() const;
 		virtual void setModule(const std::string &module);
+
+		const std::string &getLocation() const;
+		void setLocation(const std::string &location);
 
 		virtual json serializeToJson();
 	};

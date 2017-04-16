@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "GameElements/Unit/Unit.h"
 
 namespace Ui {
 class MainWindow;

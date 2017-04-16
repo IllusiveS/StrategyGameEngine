@@ -44,5 +44,13 @@ namespace BaseModel{
 	void BasicElement::setModule(const std::string &module) {
 		BasicElement::module = module;
 	}
+
+	const std::string &BasicElement::getLocation() const {
+		return location;
+	}
+
+	void BasicElement::setLocation(const std::string &location) {
+		BasicElement::location = location;
+	}
 }
 

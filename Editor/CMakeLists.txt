@@ -4,7 +4,7 @@ project(StrategyGame)
 set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../bin")
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/GameData ~/Qt5.7.0/5.7/gcc_64)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/GameData ~/Qt5.7.0/5.7/gcc_64 QtDebug/)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
@@ -12,7 +12,7 @@ set(CMAKE_PREFIX_PATH ~/Qt5.7.0/5.7/gcc_64)
 
 find_package(Qt5Widgets)
 
-set(SOURCE_FILES main.cpp mainwindow.cpp EditorTemplates/EditorTemplateManager.cpp EditorTemplates/EditorTemplateManager.h)
+set(SOURCE_FILES main.cpp mainwindow.cpp EditorTemplates/EditorTemplateManager.cpp EditorTemplates/EditorTemplateManager.h ui/maptiledisplay.cpp)
 
 add_executable(StrategyGameEditor.exe ${SOURCE_FILES})
 add_dependencies(StrategyGameEditor.exe GameData)

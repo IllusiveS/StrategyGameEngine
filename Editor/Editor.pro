@@ -13,8 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    ui/maptiledisplay.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    ui/maptiledisplay.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    ui/maptiledisplay.ui
