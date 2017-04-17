@@ -7,14 +7,15 @@
 
 #include <json/json.hpp>
 #include <GameElements/BasicElement.h>
-#include <SDL_surface.h>
+
+class SDL_Surface;
 
 namespace BaseModel {
 	using json = nlohmann::json;
 
 	class Sprite : public BasicElement {
 		public:
-			static Sprite * ReadSpriteFromFile(std::string location);
+			static Sprite * ReadSpriteFromFile(std::string location, SDL_Surface * surface);
 
 		private:
 			Sprite(std::string name, SDL_Surface*);

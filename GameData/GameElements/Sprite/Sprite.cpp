@@ -3,8 +3,9 @@
 //
 
 #include "Sprite.h"
+#include <SDL_surface.h>
 
-BaseModel::Sprite *BaseModel::Sprite::ReadSpriteFromFile(std::string location) {
+BaseModel::Sprite *BaseModel::Sprite::ReadSpriteFromFile(std::string location, SDL_Surface * surface) {
 	return nullptr;
 }
 
