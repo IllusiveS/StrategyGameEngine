@@ -3,6 +3,7 @@
 //
 
 #include <SDL.h>
+#include <SDL_image.h>
 #include "SDLContext.h"
 
 void SDLContext::PrepareSDLContext() {
@@ -31,8 +32,19 @@ bool SDLContext::init()
 		}
 		else
 		{
-			//Get window surface
-			screenSurface = SDL_GetWindowSurface( window );
+			//Initialize PNG loading
+			int imgFlags = IMG_INIT_PNG;
+			if( !( IMG_Init( imgFlags ) & imgFlags ) )
+			{
+				printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
+				success = false;
+			}
+			else
+			{
+				//Get window surface
+				screenSurface = SDL_GetWindowSurface( window );
+			}
+
 		}
 	}
 

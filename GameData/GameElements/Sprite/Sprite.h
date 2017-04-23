@@ -19,11 +19,12 @@ namespace BaseModel {
 			static Sprite * ReadSpriteFromFile(std::string location, SDL_Surface * surface);
 
 		private:
-			Sprite(std::string name, SDL_Surface*);
+			Sprite();
 
 		public:
 			void SetOrigin(Vector2D newOrigin);
 			void SetSize(Vector2D size);
+			void SetSurface(SDL_Surface * newSurface);
 
 		protected:
 			Vector2D origin;
