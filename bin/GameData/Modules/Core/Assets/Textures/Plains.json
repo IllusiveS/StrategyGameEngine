@@ -3,6 +3,7 @@
   "templateType": "SPRITE",
   "textureName": "Plains",
   "filename": "Plains.png",
+  "module": "Core",
   "origin": {
     "x":0,
     "y":0

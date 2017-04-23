@@ -15,13 +15,21 @@ string SpriteManager::GetSubdirectory() {
 
 void SpriteManager::AddTemplate(json j) {
 	std::string spriteName = j["textureName"];
-	std::string spriteFilename = j["textureName"];
+	std::string spriteFilename = j["filename"];
+	std::string moduleName = j["module"];
 	float originX = j["origin"]["x"];
 	float originY = j["origin"]["y"];
 
-	Sprite * newSprite = Sprite::ReadSpriteFromFile(spriteFilename, SDLContext::Get().GetSurface());
-	Vector2D newSpriteOrigin = Vector2D(originX, originY);
-	newSprite->SetOrigin(newSpriteOrigin);
+	std::string filename = "./GameData/Modules/" + moduleName + "/" + GetSubdirectory() + "/" + spriteFilename;
+
+	Sprite * newSprite = Sprite::ReadSpriteFromFile(filename, SDLContext::Get().GetSurface());
+	if(newSprite == nullptr){
+		printf("[err]cant read %s\n", filename.c_str());
+	} else {
+		printf("[suc]texture %s read\n", filename.c_str());
+		Vector2D newSpriteOrigin = Vector2D(originX, originY);
+		newSprite->SetOrigin(newSpriteOrigin);
+	}
 }
 
 void SpriteManager::SaveTemplate(Sprite *model) {

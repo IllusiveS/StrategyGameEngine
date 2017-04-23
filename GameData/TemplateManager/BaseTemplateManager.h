@@ -61,7 +61,8 @@ public:
 
 					for(auto i = files.begin(); i != files.end(); i++) {
 						path currentPath = *i;
-						if(is_directory(currentPath)){
+						size_t len = strlen(currentPath.c_str());
+						if(is_directory(currentPath) || (len > 5 && strcmp(currentPath.c_str() + len - 5, ".json") != 0) ){
 							continue;
 						}
 						names.push_back(currentPath.string());
