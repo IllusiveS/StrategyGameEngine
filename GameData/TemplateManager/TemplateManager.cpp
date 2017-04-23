@@ -43,6 +43,8 @@ void TemplateManager::ReadSingleModule(std::string moduleName,
 	moduleManager.ReadTemplatesFromJsons(directory);
 	printf("[inf]READING MAPTILES FROM %s\n", moduleName.c_str());
 	terrainManager.ReadTemplatesFromJsons(directory);
+	printf("[inf]READING SPRITES FROM %s\n", moduleName.c_str());
+	spriteManager.ReadTemplatesFromJsons(directory);
 }
 
 void TemplateManager::SaveTemplates() {

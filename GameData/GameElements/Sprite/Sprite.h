@@ -7,6 +7,7 @@
 
 #include <json/json.hpp>
 #include <GameElements/BasicElement.h>
+#include <Math/Vector2D.h>
 
 class SDL_Surface;
 
@@ -21,6 +22,8 @@ namespace BaseModel {
 			Sprite(std::string name, SDL_Surface*);
 
 		protected:
+			Vector2D origin;
+			Vector2D size;
 			SDL_Surface * surface;
 	};
 }

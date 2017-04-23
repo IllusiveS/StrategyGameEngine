@@ -5,9 +5,10 @@
 #include <TemplateManager/TemplateManager.h>
 #include <fstream>
 #include <GameElements/Modules/Module.h>
+#include <SDL/SDLContext.h>
 
 int main (){
+	SDLContext::Get().PrepareSDLContext();
 	TemplateManager manager;
-	//manager.ReadTemplates();
 	return 0;
 }
