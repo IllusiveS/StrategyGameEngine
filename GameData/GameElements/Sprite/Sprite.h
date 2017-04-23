@@ -21,6 +21,10 @@ namespace BaseModel {
 		private:
 			Sprite(std::string name, SDL_Surface*);
 
+		public:
+			void SetOrigin(Vector2D newOrigin);
+			void SetSize(Vector2D size);
+
 		protected:
 			Vector2D origin;
 			Vector2D size;

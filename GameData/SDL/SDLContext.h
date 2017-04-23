@@ -25,6 +25,9 @@ public:
 	void operator=(SDLContext const&) = delete;
 	void PrepareSDLContext();
 
+	SDL_Window * GetWindow() {return window;};
+	SDL_Surface * GetSurface() {return screenSurface;};
+
 protected:
 	bool init();
 

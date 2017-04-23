@@ -1,0 +1,10 @@
+{
+  "templateName": "plains",
+  "templateType": "SPRITE",
+  "textureName": "Plains",
+  "filename": "Plains.png",
+  "origin": {
+    "x":0,
+    "y":0
+  }
+}

@@ -12,3 +12,11 @@ BaseModel::Sprite *BaseModel::Sprite::ReadSpriteFromFile(std::string location, S
 BaseModel::Sprite::Sprite(std::string name, SDL_Surface *) {
 
 }
+
+void BaseModel::Sprite::SetOrigin(Vector2D newOrigin) {
+	origin = newOrigin;
+}
+
+void BaseModel::Sprite::SetSize(Vector2D size) {
+	this->size = size;
+}
