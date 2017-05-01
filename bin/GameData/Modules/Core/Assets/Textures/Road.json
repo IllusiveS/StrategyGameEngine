@@ -1,0 +1,11 @@
+{
+  "templateName": "road",
+  "templateType": "SPRITE",
+  "textureName": "Road",
+  "filename": "Road.png",
+  "module": "Core",
+  "origin": {
+    "x":0,
+    "y":0
+  }
+}
