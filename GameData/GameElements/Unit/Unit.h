@@ -6,13 +6,14 @@
 #define STRATEGYGAME_UNIT_H
 
 #include <string>
+#include <GameElements/BasicElement.h>
 #include "lua.hpp"
 #include "json/json.hpp"
 
 namespace BaseModel {
 	using json = nlohmann::json;
 
-	class Unit {
+	class Unit : public BasicElement {
 	protected:
 		int hp;
 		int glory;
@@ -44,7 +45,7 @@ namespace BaseModel {
 	public:
 		Unit();
 
-		json SerializeToJson();
+		virtual json serializeToJson();
 	};
 }
 

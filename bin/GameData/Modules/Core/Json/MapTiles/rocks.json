@@ -1,10 +1,10 @@
 {
-    "isAttackableFunctionTemplate": "default",
-    "isEnterableFunctionTemplateName": "default",
-    "isPassableFunctionTemplateName": "default",
+    "isAttackableFunctionTemplate": "",
+    "isEnterableFunctionTemplateName": "",
+    "isPassableFunctionTemplateName": "",
     "module": "Core",
-    "retrieveMovementCostFunctionTemplateName": "default",
+    "retrieveMovementCostFunctionTemplateName": "",
     "templateName": "rocks",
     "templateType": "MAPTILE",
-    "textureName": "Plains"
+    "textureName": ""
 }

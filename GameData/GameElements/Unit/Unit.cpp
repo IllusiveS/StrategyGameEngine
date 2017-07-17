@@ -16,8 +16,8 @@ namespace BaseModel {
 				.endNamespace();
 	}
 
-	json Unit::SerializeToJson() {
-		json j;
+	json Unit::serializeToJson() {
+		json j = BasicElement::serializeToJson();
 		j["templateType"] = "UNIT";
 		j["templateName"] = templateName;
 		j["name"] = name;

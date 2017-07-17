@@ -12,6 +12,7 @@
 #include <string>
 #include <TemplateManager/IndividualManagers/ModuleManager.h>
 #include <TemplateManager/IndividualManagers/SpriteManager.h>
+#include <TemplateManager/IndividualManagers/UnitManager.h>
 
 class TemplateManager {
 	//TODO odczyt danych z każdego katalogu z danymi (bendom mody)
@@ -23,6 +24,7 @@ public:
 	ArmyManager armyManager;
 	ModuleManager moduleManager;
 	SpriteManager spriteManager;
+	UnitManager unitManager;
 
 public:
 	void ReadTemplates();
