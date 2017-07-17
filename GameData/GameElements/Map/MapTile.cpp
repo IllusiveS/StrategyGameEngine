@@ -11,7 +11,7 @@ namespace BaseModel {
 	}
 
 	MapTile::MapTile() : baseMovementCost(1) {
-		templateType = "PLAINS";
+		templateType = "MAPTILE";
 	}
 
 	json MapTile::serializeToJson() {
@@ -92,7 +92,7 @@ namespace BaseModel {
 		return textureName;
 	}
 
-	void MapTile::setTextureName(const std::string &textureName) {
-		this->textureName = textureName;
+	void MapTile::setTextureName(const std::string &newTextureName) {
+		textureName = newTextureName;
 	}
 }

@@ -106,9 +106,7 @@ public:
 	virtual void SaveTemplate(Model * model) = 0;
 
 	void AddTemplatePair(std::string name, Model * model) {
-		templatesMap.insert(
-				std::pair<std::string, Model *>(name, model)
-		);
+		templatesMap[name] = model;
 	}
 
 	virtual void SaveTemplates() {
